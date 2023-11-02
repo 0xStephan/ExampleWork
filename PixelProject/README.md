@@ -1,7 +1,9 @@
 # Pixel Project
 This was an Australian project that wanted to create a unique NFT pass (ERC-1155).
 
-They needed custom functionality for the NFT contract and also required certain elements for React App.
+They needed custom functionality for the NFT contract and also required certain requirements for a ReactApp.
+
+One unique requirement was having a refund window for users to claim a refund from their mint if the project did not perform or if users were not satified with their purchase.
 
 
 ## How does it work?
