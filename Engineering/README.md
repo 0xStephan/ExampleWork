@@ -1,6 +1,6 @@
 # Example of engineering application that was built
 
-### Python Controls
+## Python Controls
 Industrial IoT device that communicates between the controls systems and the user interface systems.
 API takes API calls from front app (ie XamarinApp) and translates + communicates the requests via Modbus TCP to the controls network.
 
