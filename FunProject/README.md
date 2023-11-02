@@ -12,4 +12,12 @@ The winner of each round takes the entire prize pool.
 
 This repeats as each round has more entries (thus the prize pool for each round increases).
 
-Please see fundoge.sol and ReactApp for source code.
+Smart contract code is found in the following file: 
+```
+fundoge.sol
+```
+
+ReactApp can be found in the folder labelled
+```
+ReactApp
+```
