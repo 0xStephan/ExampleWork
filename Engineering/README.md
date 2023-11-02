@@ -1,4 +1,4 @@
-# Example of engineering application that was built
+# Example of engineering application
 
 ## Python Controls
 Industrial IoT device that communicates between the controls systems and the user interface systems.
