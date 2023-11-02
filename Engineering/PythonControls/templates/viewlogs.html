@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V-Space Parkers : View Logs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <div id="loadOverlay" style="background-color:#ffffff; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <div class="container">
+      <center>
+      <img src="/static/logo.png" alt="V-Space Parkers" class="center" height="98" width="228" />
+      <h1>View Logs</h1>
+      <hr>
+      <p>Back to <a href="/admin">Home</a></p>
+      {% for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+      {% endfor %}
+      <h2>User Token Log</h2>
+      <textarea id="tokenlog" rows="15" cols="90" readonly>
+          {{ tokenlog }}
+      </textarea>
+      <h2>User Call Spot Log</h2>
+      <textarea id="callspotlog" rows="15" cols="90" readonly>
+          {{ callspotlog }}
+      </textarea>
+      <br>
+      <br>
+      <p>Click <a href="/admin/logout">here</a> to logout.</p>
+      <small>&copy; 2020 V-Space Parkers Pty Ltd </small>
+      </center>
+    </div>
+    <script>
+    document.getElementById("tokenlog").scrollTop = document.getElementById("tokenlog").scrollHeight
+    document.getElementById("callspotlog").scrollTop = document.getElementById("callspotlog").scrollHeight
+    </script>
+  </body>
+</html>

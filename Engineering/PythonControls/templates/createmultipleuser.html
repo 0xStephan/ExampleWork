@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V-Space Parkers : Create Multiple Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <div id="loadOverlay" style="background-color:#ffffff; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <div class="container">
+      <center>
+      <div id="printable" class="container">
+      <img src="/static/logo.png" alt="V-Space Parkers" class="center" height="98" width="228" />
+      <h1>Create Multiple Users</h1>
+      <hr>
+      <p>Back to <a href="/admin">Home</a> | Back to <a href="/admin/createmultiple">Create Multiple Users</a> </p>
+      {% for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+      {% endfor %}
+      {% if success_users %}
+      <a href="#null" onclick="printContent('printable')">Click to print table</a>
+      <h3>The following users were succesfully created</h3>
+      <table>
+          <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Name</th>
+            <th>SpotID</th>
+            <th>Apartment</th>
+          </tr>
+          {% for user in success_users %}
+          <tr>
+            <td>{{user[0]}}</td>
+            <td>{{user[1]}}</td>
+            <td>{{user[2]}}</td>
+            <td>{{user[3]}}</td>
+            <td>{{user[4]}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% endif %}
+      </div>
+    <br>
+    {% if failed_users %}
+    <h3 style="color:red;">The following users failed to be created</h3>
+    <table>
+        <tr>
+          <th>Sheet Row</th>
+          <th>Username</th>
+          <th>Error</th>
+          <th>Name</th>
+          <th>SpotID</th>
+          <th>Apartment</th>
+        </tr>
+        {% for user in failed_users %}
+        <tr>
+          <td>{{user[0]}}</td>
+          <td>{{user[1]}}</td>
+          <td style="word-wrap: break-word">{{user[5]}}</td>
+          <td>{{user[2]}}</td>
+          <td>{{user[3]}}</td>
+          <td>{{user[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    {% if not success_users and not failed_users %}
+    <h2>There was an error processing the request</h2>
+    {% endif %}
+    <br>
+    <p>Click <a href="/admin/logout">here</a> to logout.</p>
+    <small>&copy; 2020 V-Space Parkers Pty Ltd </small>
+    </center>
+    </div>
+    <script type="text/javascript">
+<!--
+function printContent(id){
+str=document.getElementById(id).innerHTML
+newwin=window.open('','printwin','left=100,top=100,width=400,height=400')
+newwin.document.write('<HTML>\n<HEAD>\n')
+newwin.document.write('<TITLE>Print Page</TITLE>\n')
+newwin.document.write('<script>\n')
+newwin.document.write('function chkstate(){\n')
+newwin.document.write('if(document.readyState=="complete"){\n')
+newwin.document.write('window.close()\n')
+newwin.document.write('}\n')
+newwin.document.write('else{\n')
+newwin.document.write('setTimeout("chkstate()",2000)\n')
+newwin.document.write('}\n')
+newwin.document.write('}\n')
+newwin.document.write('function print_win(){\n')
+newwin.document.write('window.print();\n')
+newwin.document.write('chkstate();\n')
+newwin.document.write('}\n')
+newwin.document.write('<\/script>\n')
+newwin.document.write('</HEAD>\n')
+newwin.document.write('<BODY onload="print_win()">\n')
+newwin.document.write(str)
+newwin.document.write('</BODY>\n')
+newwin.document.write('</HTML>\n')
+newwin.document.close()
+}
+//-->
+</script>
+  </body>
+</html>

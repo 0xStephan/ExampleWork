@@ -1,0 +1,449 @@
+html {
+  height: 100%;
+  margin: auto;
+
+
+}
+body {
+  font-family: 'Space Grotesk';
+  font-size: 12px;
+  color: white;
+  background-color: black;
+}
+
+a {
+  color: white;
+}
+
+.responsive {
+  width: 250px;
+  height: 194px;
+}
+
+.big-text {
+  font-family: 'Space Grotesk';
+  font-size: 1.5em;
+  color: white;
+}
+
+
+.gradient {
+  background: url("https://pixelboss.io/wp-content/uploads/2022/08/backgorund.png") no-repeat center center scroll;
+  background-size: cover;
+  height: 100%;
+}
+
+.banner {
+  padding-top: 40px ;
+  text-align: center;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  padding-bottom: 40px;
+}
+
+.contents {
+  width: 100%;
+  height: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: row;
+}
+
+.contents-wallet {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.contents-black {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+.inner {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.75em;
+  min-width: 85%;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 0%;
+  padding-right: 0%;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+.connect-button {
+border: 1px solid #5D57F3;
+border-radius: 28px;
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 15px;
+font-style: normal;
+font-weight: 400;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 1rem;
+color: #212529;
+line-height: 1.5;
+color: #FFFFFF;
+background-color: rgba(0,0,0,0.5)
+}
+
+.connect-button:hover {
+  border: 1px solid white;
+
+}
+
+.connect-button .wallet-svg {
+  fill: #5D57F3;
+}
+
+.connect-button:hover .wallet-svg {
+  fill: white;
+}
+
+.connected-button {
+  border: 1px solid #5D57F3;
+border-radius: 28px;
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 15px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 0.4em;
+color: #FFFFFF;
+background-color: rgba(0,0,0,0.5);
+margin-top: 20px;
+}
+
+.connect-banner {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 48px;
+
+  text-align: center;
+
+
+  color: #FFFFFF;
+}
+
+.membership-card {
+  width: 153px;
+  height: 99px;
+}
+
+.my-row {
+  display: inline-block;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  justify-content: center;
+  min-width: 80%;
+
+}
+
+.row-nft {
+  display: flex;
+  text-align: left;
+  padding-left: 20%;
+  padding-right: 5%;
+}
+
+.header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-img:hover {
+  content: url('https://pixelboss.io/wp-content/uploads/2022/07/pxb-club-logo-hover.svg');
+}
+
+.footer-text {
+  text-align: center;
+  color: #A5A5A5;
+  font-family: "Space Mono", Sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+
+.footer-img {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 15px;
+  width: auto;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .row-nft {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .column {
+    text-align: center;
+    padding: 0px;
+  }
+
+  .inner {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.75em;
+    min-width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 0%;
+    padding-right: 0%;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+  }
+
+  .connect-wallet {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .connect-wallet-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .connect-button {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+.wallet-connected {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.wallet-connect {
+  font-size: 12px;
+}
+
+.column { 
+  -webkit-flex-direction: column; 
+  flex-direction: column; 
+  align-self: center;
+  padding: 12px;
+}
+
+.inner-row {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.75em;
+  min-width: 60%;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.mint-button {
+  margin-left: auto; 
+margin-right: 0;
+box-sizing: border-box;
+background: #5D57F3;
+border: 1px solid #5D57F3;
+border-radius: 28px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 0.7em;
+color: #FFFFFF;
+padding: 15px;
+margin-bottom: 20px;
+}
+
+.mint-button:hover {
+  background: black;
+}
+
+.error-button {
+  margin-left: auto; 
+margin-right: 0;
+box-sizing: border-box;
+background: black;
+border: 1px solid red;
+border-radius: 28px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 0.7em;
+color: #FFFFFF;
+padding: 15px;
+margin-bottom: 20px;
+}
+
+.invite-button {
+  margin-left: auto; 
+margin-right: 0;
+box-sizing: border-box;
+background: black;
+border: 1px solid purple;
+border-radius: 28px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 0.7em;
+color: #FFFFFF;
+padding: 15px;
+margin-bottom: 20px;
+}
+
+.approval-button {
+  margin-left: auto; 
+margin-right: 0;
+box-sizing: border-box;
+background: black;
+border: 1px solid orange;
+border-radius: 28px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 0.7em;
+color: #FFFFFF;
+padding: 15px;
+margin-bottom: 20px;
+}
+
+.dot-pulse {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 9999px 0 0 -5px #FFFFFF;
+  animation: dotPulse 1.5s infinite linear;
+  animation-delay: .25s;
+}
+
+.dot-pulse::before, .dot-pulse::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.dot-pulse::before {
+  box-shadow: 9984px 0 0 -5px #FFFFFF;
+  animation: dotPulseBefore 1.5s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-pulse::after {
+  box-shadow: 10014px 0 0 -5px #FFFFFF;
+  animation: dotPulseAfter 1.5s infinite linear;
+  animation-delay: .5s;
+}
+
+@keyframes dotPulseBefore {
+  0% {
+    box-shadow: 9984px 0 0 -5px #FFFFFF;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px #FFFFFF;
+  }
+  60%,
+  100% {
+    box-shadow: 9984px 0 0 -5px #FFFFFF;
+  }
+}
+
+@keyframes dotPulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px #FFFFFF;
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px #FFFFFF;
+  }
+  60%,
+  100% {
+    box-shadow: 9999px 0 0 -5px #FFFFFF;
+  }
+}
+
+@keyframes dotPulseAfter {
+  0% {
+    box-shadow: 10014px 0 0 -5px #FFFFFF;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px #FFFFFF;
+  }
+  60%,
+  100% {
+    box-shadow: 10014px 0 0 -5px #FFFFFF;
+  }
+}

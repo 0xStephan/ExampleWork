@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="VSpaceParkers.Pages.UserPage"
+             Title="My Profile"
+             BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="My Settings" Clicked="EditProfile"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout x:Name="User" Orientation="Vertical" 
+                     Padding="20" Spacing="20">
+
+            <Label x:Name="WelcomeHeading" Text="" 
+                    TextColor="Black" HorizontalOptions="Center" 
+                    VerticalOptions="Center" FontSize="Large" />
+            
+
+            <Label x:Name="FullName" TextColor="Black" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" FontSize="Large" 
+                    FontAttributes="Bold" />
+
+            
+
+            
+            
+            <StackLayout x:Name="Headings" Orientation="Vertical" 
+                        Spacing="20">
+                
+                <Label x:Name="ReadyCall"
+                    TextColor="Gray"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"/>
+            
+                <Label x:Name="SpotNumber" 
+                    TextColor="Gray"
+                    FontSize="Large" 
+                    HorizontalOptions="Center" />
+          
+            </StackLayout>
+            <ScrollView>
+                <StackLayout x:Name="Buttons" Spacing="20"/>
+            </ScrollView>
+
+            <Button Text="Support" TextColor="White"
+                    x:Name="SupportButton"
+                    FontSize="Medium" FontAttributes="Bold"
+                    IsVisible="False"
+                    BackgroundColor="Red"
+                    CornerRadius="5"
+                    Clicked="Support_Clicked"/>
+
+            <Frame x:Name="ErrorFrame" HasShadow="False" IsVisible="False">
+
+            <Label x:Name="ErrorConnect" HorizontalOptions="Fill" 
+                   TextColor="Gray" FontSize="Large" HorizontalTextAlignment="Center"/>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

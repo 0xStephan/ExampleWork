@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="VSpaceParkers.Pages.EditSpotNickName"
+             Title="Spot Nicknames"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" Padding="30"
+                         Spacing="20" x:Name="Top">
+
+                <Label x:Name="NicknameFormHeading" Text="My Spot Nicknames" 
+                    TextColor="Black" HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"/>
+
+                <ActivityIndicator x:Name="Loading" IsVisible="False" Scale="2.0" />
+
+            </StackLayout>
+            <ScrollView>
+
+                <StackLayout x:Name="SpotNickNames" Padding="30" Spacing="20"/>
+                
+            </ScrollView>
+            <StackLayout Orientation="Vertical" Padding="30"
+                         Spacing="20" x:Name="Bottom">
+
+                <Button x:Name="SubmitButton"
+                    Text="Save my new nicknames" TextColor="White"
+                    FontAttributes="Bold" FontSize="Medium" 
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="Submit_Clicked"
+                    BackgroundColor="#2E4A94"
+                    CornerRadius="5"/>
+
+                <Button x:Name="ClearButton"
+                    Text="Remove all nicknames" TextColor="White"
+                    FontAttributes="Bold" FontSize="Medium"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="ClearAll_Clicked"
+                    BackgroundColor="Gray"
+                    BorderColor="Black"
+                    CornerRadius="5"/>
+
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

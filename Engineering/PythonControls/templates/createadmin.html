@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V-Space Parkers : Create Admin User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <div id="loadOverlay" style="background-color:#ffffff; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <div class="container">
+      <center>
+        <img src="/static/logo.png" alt="V-Space Parkers" class="center" height="98" width="228" />
+        <h1>Create Admin User</h1>
+        <hr>
+        <p>Back to <a href="/admin">Home</a> | Back to <a href="/admin/editadmin">Admin Users</a> </p>
+        {% for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+        {% endfor %}
+        <a href="/admin/createadmin">Clear Form</a>
+        {% from "_formhelpers.html" import render_field %}
+        <form action = "/admin/createadmin" method = "POST">
+        <table>
+            <tr>
+                <td><b>Username</b></td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td><b>Spot ID</b></td>
+                <td><input type="text" name="spotid" value="1_1"></td>
+            </tr>
+            <tr>
+                <td><b>Password</b></td>
+                <td><input type="text" name="password"></td>
+            </tr>
+            <tr>
+              <td><b>Admin Level</b></td>
+              <td>
+                <select name="admintype">
+                      <option value="2">Admin</option>
+                      <option value="3">Site Manager</option>
+                </select>
+              </td>
+            </tr>
+        </table>
+          <br>
+          <p><input type = "submit" name="submit_button" value = "Create User" />
+        </form>
+        <br>
+        <br>
+        <p>Click <a href="/admin/logout">here</a> to logout.</p>
+        <small>&copy; 2020 V-Space Parkers Pty Ltd </small>
+      </center>
+    </div>
+  </body>
+</html>

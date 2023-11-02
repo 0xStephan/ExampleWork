@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="VSpaceParkers.Pages.RegisterFormPage" Title="Register"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="20" x:Name="Top">
+
+            <Label x:Name="RegisterFormHeading" Text="Register" 
+                    TextColor="Black" HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+
+            <Label Text="Please fill out your details correctly into the form below." 
+                    TextColor="Gray" HorizontalOptions="CenterAndExpand"
+                    FontSize="Small" />
+
+            <ActivityIndicator x:Name="Loading" IsRunning="False" IsEnabled="False" IsVisible="False" Scale="2.0" />
+
+             <ScrollView>
+                 <StackLayout Orientation="Vertical" Padding="27" Spacing="14" 
+                     x:Name="Elements">
+
+                    <StackLayout x:Name="SpotIDBox" Padding="3">
+                    <Entry x:Name="spotid"
+                            IsEnabled="False"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            PlaceholderColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="FirstNameBox" Padding="3">
+                    <Entry x:Name="FirstName"
+                            Placeholder="First Name"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            ReturnType="Next"/>
+                    </StackLayout>
+
+                     <StackLayout x:Name="LastNameBox" Padding="3">
+                    <Entry x:Name="LastName"
+                            Placeholder="Last Name"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            ReturnType="Next"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="UsernameBox" Padding="3">
+                    <Entry x:Name="Username"
+                            Placeholder="Username"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            IsPassword="False" ReturnType="Next"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="PasswordBox" Padding="3">
+                    <Entry x:Name="Password"
+                            Placeholder="Password"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            IsPassword="True" ReturnType="Next"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="ConfirmPasswordBox" Padding="3">
+                    <Entry x:Name="ConfirmPassword"
+                            Placeholder="Confirm Password"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            IsPassword="True" ReturnType="Next"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="EmailBox" Padding="3">
+                    <Entry x:Name="Email"
+                            Placeholder="Email address"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            ReturnType="Next"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="PhoneNumberBox" Padding="3">
+                    <Entry x:Name="PhoneNumber"
+                            Placeholder="Phone or mobile number"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            ReturnType="Next"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="ApartmentBox" Padding="3">
+                    <Entry x:Name="Apartment"
+                            Placeholder="Apartment"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            ReturnType="Next"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="AddressBox" Padding="3">
+                    <Entry x:Name="Address"
+                            Placeholder="Street Address"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            ReturnType="Next"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="CarRegoBox" Padding="3">
+                    <Entry x:Name="CarRego"
+                            Placeholder="Vehicle Registration Number"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            ReturnType="Done"/>
+                    </StackLayout>
+
+                 </StackLayout>
+             </ScrollView>
+
+            <Button x:Name="SubmitButton"
+                    Text="Create My Account" TextColor="White"
+                    FontAttributes="Bold" FontSize="Large" 
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="Submit_Clicked"
+                    BackgroundColor="#2E4A94"
+                    CornerRadius="5"/>
+            
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

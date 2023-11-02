@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="VSpaceParkers.Pages.LoginPage"
+             Title="Login"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout x:Name="Top" Orientation="Vertical" Padding="30" Spacing="40">  
+            <!--
+            <Label x:Name="LoginHeading" Text="Login to your account" 
+                    TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"
+                    VerticalOptions="Center"/>
+             -->
+            <Image x:Name="Logo" Source="VSpaceLogo2.png" Aspect="AspectFit"/>
+            <!-- #BF043055 #3d4458 -->
+            <Frame BackgroundColor="#dcdcdf" HasShadow="False" CornerRadius="5">
+                <StackLayout x:Name="LoginForm" Orientation="Vertical" Spacing="10">  
+                   
+                    <Entry x:Name="Username"
+                            Placeholder="Username" ReturnType="Next"
+                            BackgroundColor="White"
+                            TextColor="Black"/>
+        
+                    <Entry x:Name="Password"
+                            Placeholder="Password"
+                            IsPassword="True" ReturnType="Done"
+                            BackgroundColor="White"
+                            TextColor="Black"/>
+                    
+                    <Label x:Name="messageLabel" Text="Please enter your username and password above" 
+                           FontSize="Medium" TextColor="Black" HorizontalTextAlignment="Center"/>
+                    
+                </StackLayout>
+            </Frame> 
+            
+            <Button x:Name="LoginButton"
+                    Text="Log me in" TextColor="White"
+                    FontAttributes="Bold" FontSize="Large" 
+                    HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#2E4A94" Clicked="Login_Clicked"
+                    CornerRadius="5"/>
+            
+            <Button x:Name="ConnectingButton" 
+                    Text="Please wait..." TextColor="Black" 
+                    FontAttributes="Bold" FontSize="Large" 
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Gray" BorderColor="Black"
+                    CornerRadius="5"/>
+
+            
+            <StackLayout x:Name="Bottom" Orientation="Vertical" 
+                         VerticalOptions="End">
+                
+                <Button Text="Create an account" 
+                        Clicked="Register_Clicked" TextColor="Gray"
+                        HorizontalOptions="FillAndExpand" 
+                        FontSize="Small" FontAttributes="Bold"
+                        CornerRadius="5"/>
+                
+                <Button Text="Forgot your credentials?" 
+                        Clicked="Forgot_Clicked" TextColor="Gray"
+                        HorizontalOptions="FillAndExpand" 
+                        FontSize="Small" FontAttributes="Bold"
+                        CornerRadius="5"/>
+                
+            </StackLayout>
+            
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

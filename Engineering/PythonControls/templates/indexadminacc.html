@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V-Space Parkers : Edit Admin Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <div id="loadOverlay" style="background-color:#ffffff; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <div class="container">
+      <center>
+      <img src="/static/logo.png" alt="V-Space Parkers" class="center" height="98" width="228" />
+      <h1>Edit Admin Users</h1>
+      <hr>
+      <p>Back to <a href="/admin">Home</a></p>
+      {% if adminlevel == 1 %}
+      <p><a href="/admin/createadmin">Create Admin User</a></p>
+      {% endif %}
+      {% for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+      {% endfor %}
+      <table>
+          <tr>
+            <th>Username</th>
+            <th>Admin Type</th>
+            <th>SpotID</th>
+            <th></th>
+          </tr>
+          {% for user in users %}
+          <tr>
+            <td>{{user.username}}</td>
+            {% if user.admin == 1 %}
+            <td>Super Admin</td>
+            {% elif user.admin == 2 %}
+            <td>Admin</td>
+            {% elif user.admin == 3 %}
+            <td>Site Manager</td>
+            {% endif %}
+            <td>{{user.spotid}}</td>
+            <td><a href="/admin/editadmin/{{user.user_id}}">Edit</a></td>
+          </tr>
+          {% endfor %}
+    </table>
+    <br>
+    <br>
+    <p>Click <a href="/admin/logout">here</a> to logout.</p>
+    <small>&copy; 2020 V-Space Parkers Pty Ltd </small>
+    </center>
+    </div>
+  </body>
+</html>

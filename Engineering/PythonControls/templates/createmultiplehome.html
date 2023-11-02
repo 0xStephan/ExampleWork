@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V-Space Parkers : Create Multiple Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <div id="loadOverlay" style="background-color:#ffffff; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <div class="container">
+      <center>
+      <img src="/static/logo.png" alt="V-Space Parkers" class="center" height="98" width="228" />
+      <h1>Create Multiple Users</h1>
+      <hr>
+      <p>Back to <a href="/admin">Home</a></p>
+      {% for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+        <br>
+      {% endfor %}
+      <h3>Please append user details to either Excel Form and upload once complete.</h2>
+      <p><b>Note:</b> If you would like the system to <b>generate user passwords</b> for you download the 2nd form</p>
+      <form action="/static/NewUserPassword.xlsx">
+         <button type="submit">Download Excel Form with Password Fields</button>
+      </form>
+      <br>
+      <form action="/static/NewUserNoPassword.xlsx">
+         <button type="submit">Download Excel Form without Password Fields</button>
+      </form>
+    <br>
+    <br>
+    <h3>Upload File</h3>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+    <br><br>
+    <p>Click <a href="/logout">here</a> to logout.</p>
+    <small>&copy; 2020 V-Space Parkers Pty Ltd </small>
+    </center>
+    </div>
+  </body>
+</html>

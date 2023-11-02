@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VSpaceParkers"
+             x:Class="VSpaceParkers.MainPage"
+             BackgroundColor="#2E4A94"
+             Title="Please Connect to continue">
+    <ScrollView>
+    <StackLayout >
+        <StackLayout x:Name="MainStack" Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="40" Spacing="40">
+        <!--
+        VerticalOptions="CenterAndExpand"
+        
+        -->
+        <StackLayout VerticalOptions="FillAndExpand"></StackLayout>
+        <Image x:Name="VSpaceLogo" Source="VSpaceLogo.png" Aspect="AspectFit"/>
+        
+        <!--
+        <Label x:Name="Heading"
+            Text="" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"
+               FontSize="40" 
+               FontAttributes="Bold" />
+         -->
+        </StackLayout>
+
+
+        <StackLayout x:Name="ButtonStack" Orientation="Vertical" VerticalOptions="End" Padding="30" Spacing="40">
+
+        <ActivityIndicator x:Name="Loading" IsRunning="False" IsEnabled="False" Scale="2.0" Color="White"/>
+
+        <Label Text="Please Connect to continue" TextColor="White" 
+               FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" />
+
+        
+        <Button Text="Connect" Clicked="Connect_Clicked" TextColor="#2E4A94"
+                x:Name="ConnectButton"
+                BackgroundColor="White" 
+                BorderColor="Black" CornerRadius="5" 
+                HorizontalOptions="FillAndExpand" 
+                FontSize="Large" FontAttributes="Bold"/>
+                 
+                <Button Text="I need help" TextColor="White" BackgroundColor="Transparent"
+                 HorizontalOptions="FillAndExpand" Clicked="Support_Clicked"
+                FontSize="Small" FontAttributes="Bold"
+                        CornerRadius="5"/>
+
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V-Space Parkers : Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <div id="loadOverlay" style="background-color:#ffffff; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <div class="container">
+      <center>
+      <img src="/static/logo.png" alt="V-Space Parkers" class="center" height="98" width="228" />
+      <h1>Admin Panel : {{site}}</h1>
+      <hr>
+      <p><a href="/admin/createuser">Create New User</a> | <a href="/admin/createmultiple">Create Multiple Users</a></p>
+      {% for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+      {% endfor %}
+      <form action="" method="post">
+        <input type="text" placeholder="Search" name="value"
+        value="{{ request.form.search }}">
+        <select name="field">
+        {% for option in options %}
+            <option value="{{option}}">{{option}}</option>
+        {% endfor %}
+        </select>
+        <input type = "submit" name="search_button" value = "Search" />
+      </form>
+      <div class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>SpotID</th>
+            <th>Apartment</th>
+            <th>Car Rego</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{user.username}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.spotid}}</td>
+            <td>{{user.apartment}}</td>
+            <td>{{user.carrego}}</td>
+            <td><a href="/admin/edituser/{{user.user_id}}">Edit</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <br>
+    {% if adminlevel == 1 %}
+    <p><a href="/admin/editsystem">Edit System Details</a> | <a href="/admin/editkey">Edit Site Key</a> | <a href="/admin/editadmin">Edit Admin Users</a></p>
+    {% elif adminlevel == 2 %}
+    <p><a href="/admin/editsystem">Edit System Details</a> | <a href="/admin/editadmin">Edit Admin Users</a></p>
+    {% endif %}
+    <p><a href="/admin/qrcode">Generate QR Code</a></p>
+    {% if (adminlevel == 1) or (adminlevel == 2)%}
+    <p><a href="/admin/viewlogs">View Logs</a></p>
+    {% endif %}
+    <br>
+    <p>Click <a href="/admin/logout">here</a> to logout.</p>
+    <small>&copy; 2020 V-Space Parkers Pty Ltd </small>
+    </center>
+    </div>
+  </body>
+</html>

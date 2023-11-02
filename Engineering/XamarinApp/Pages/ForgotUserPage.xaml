@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="VSpaceParkers.Pages.ForgotUserPage"
+             Title="Forgot Username / Password"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+             <Label Text="Recover your account" TextColor="Black" HorizontalOptions="Center" 
+                    VerticalOptions="Center" FontSize="40" />
+             
+             
+             <Label Text="You can retrieve your Username and password by entering your registered email address below and pressing Submit  " TextColor="Gray"
+                    FontSize="Medium" />
+            
+            
+            <Frame BackgroundColor="#BF043055" HasShadow="False"> 
+            <Entry x:Name="ForgotEmail" Text="{Binding Email}" Placeholder="Email"   
+                           PlaceholderColor="Gray" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="Black"/> 
+            </Frame>
+            
+            <Button Text="Submit" TextColor="Black" BackgroundColor="#00ffff" 
+                BorderColor="Black" CornerRadius="5" HorizontalOptions="FillAndExpand" 
+                FontSize="Large" FontAttributes="Bold"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

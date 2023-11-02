@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ReleaseVersion>1.41</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DebugSymbols></DebugSymbols>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.4.25" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Services\IWifiConnector.cs" />
+    <Compile Remove="Pages\ChangePassword.xaml.cs" />
+    <Compile Remove="Constants_DESKTOP-JUV4JDF_May-14-112153-2019_Conflict.cs" />
+    <Compile Remove="Pages\EditSpotNickName.xaml_DESKTOP-JUV4JDF_May-14-113012-2019_Conflict.cs" />
+    <Compile Remove="Pages\LoginPage.xaml_DESKTOP-JUV4JDF_May-14-113013-2019_Conflict.cs" />
+    <Compile Remove="Pages\UserPage.xaml_DESKTOP-JUV4JDF_May-14-113014-2019_Conflict.cs" />
+    <Compile Remove="Services\ApiServices_DESKTOP-JUV4JDF_May-14-113014-2019_Conflict.cs" />
+    <Compile Remove="Services\ApiServices_DESKTOP-JUV4JDF_May-14-113014-2019_Conflict.cs" />
+    <Compile Remove="WifiConnectInterface.cs" />
+    <Compile Remove="Pages\WifiConnectorInterface.cs" />
+    <Compile Remove="WifiConnect.cs" />
+    <Compile Remove="Pages\EditSpotNickName %28copy%29.xaml.cs" />
+    <Compile Remove="Pages\EditPassword %28copy%29.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Pages\FAQPage.xaml.cs">
+      <DependentUpon>FAQPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Pages\ChangePassword.xaml" />
+    <EmbeddedResource Remove="Pages\EditSpotNickName_DESKTOP-JUV4JDF_May-14-113012-2019_Conflict.xaml" />
+    <EmbeddedResource Remove="Pages\FAQPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Plugin.FirebasePushNotification" />
+  </ItemGroup>
+</Project>

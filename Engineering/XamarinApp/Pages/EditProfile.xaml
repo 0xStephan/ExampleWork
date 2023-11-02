@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="VSpaceParkers.Pages.EditProfile" 
+             Title="Settings"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" Padding="30" Spacing="20" 
+                     x:Name="Top">
+
+                <Label x:Name="EditHeading" Text="My Settings" 
+                    TextColor="Black" HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"/>
+
+            </StackLayout>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="20" 
+                     x:Name="Elements"/>
+        <StackLayout>
+            <Button Text="Log me out" Clicked="Logout_Clicked" TextColor="Gray"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="End"
+                    FontSize="Medium" FontAttributes="Bold"
+                    CornerRadius="5"/>
+        </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand" Padding="40" Spacing="40">
+            <Label VerticalOptions="End" HorizontalTextAlignment="Center"
+                   x:Name="MyVersion" TextColor="LightGray"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

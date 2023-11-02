@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>V-Space Parkers : Create User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+  <body>
+    <div id="loadOverlay" style="background-color:#ffffff; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+    <div class="container">
+      <center>
+        <img src="/static/logo.png" alt="V-Space Parkers" class="center" height="98" width="228" />
+        <h1>Create New User</h1>
+        <hr>
+        <p>Back to <a href="/admin">Home</a></p>
+        {% for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+        {% endfor %}
+        <a href="/admin/createuser">Clear Form</a>
+        {% from "_formhelpers.html" import render_field %}
+        <form method=post>
+          <table align="center">
+            <dl>
+              <center>
+                <tr><td>
+                  {{ render_field(form.username) }}
+                </td></tr><tr><td>
+                  {{ render_field(form.name) }}
+                </td></tr><tr><td>
+                  {{ render_field(form.spotid) }}
+                </td></tr><tr><td>
+                  {{ render_field(form.email) }}
+                </td></tr><tr><td>
+                  {{ render_field(form.phoneNumber) }}
+                </td></tr><tr><td>
+                  {{ render_field(form.address) }}
+                </td></tr><tr><td>
+                  {{ render_field(form.apartment) }}
+                </td></tr><tr><td>
+                  {{ render_field(form.carrego) }}
+                </td></tr><tr><td>
+                  {{ render_field(form.password) }}
+                </td></tr>
+              </center>
+            </dl>
+          </table>
+          <br>
+          <p><input type = "submit" name="submit_button" value = "Submit" />
+        </form>
+        <br>
+        <br>
+        <p>Click <a href="/admin/logout">here</a> to logout.</p>
+        <small>&copy; 2020 V-Space Parkers Pty Ltd </small>
+      </center>
+    </div>
+  </body>
+</html>
